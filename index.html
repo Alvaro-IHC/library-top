@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="favicon.svg" />
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;400;700&family=Kavoon&display=swap"
+    rel="stylesheet">
+  <script src="./app.js" defer></script>
+  <script src="https://kit.fontawesome.com/69db501c4b.js" crossorigin="anonymous"></script>
+  <title>Library</title>
+</head>
+
+<body>
+  <div class="left-side">
+    <h1 class="title">Library</h1>
+    <div class="button-container">
+      <div class="add-button" onclick="displayForm()">
+        <i class="fa-solid fa-circle-plus"></i>
+      </div>
+      <div class="form-container hidden" id="form-container">
+        <h2>Add a new Book</h2>
+        <button class="close-form-button" onclick="hideForm()">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <form id="book-form">
+          <div>
+            <label for="title-form">Title:</label>
+            <input type="text" id="title-form" placeholder="The Hobbit" required>
+          </div>
+          <div>
+            <label for="author-form">Author:</label>
+            <input type="text" id="author-form" placeholder="J. R. R. Tolkien" required>
+          </div>
+          <div>
+            <label for="pages-form">Pages:</label>
+            <input type="number" id="pages-form" min="0" placeholder="304" required>
+          </div>
+          <div>
+            <label for="read-form">Read</label>
+            <input type="checkbox" id="read-form">
+          </div>
+          <input type="submit" value="new book" />
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="right-side">
+    <div id="books-container">
+      <div class="book">
+        <h3 class="book-title">Book</h3>
+        <button class="remove-book-button" onclick="hideForm()">
+          <i class="fa-solid fa-trash-can"></i>
+        </button>
+        <div class="book-info">
+          <div class="author-container">
+            <p class="author-label">Author:</p>
+            <p class="author">Som author Some author Some</p>
+          </div>
+          <div class="pages-container">
+            <p class="pages-label">Pages:</p>
+            <p class="pages">48</p>
+          </div>
+        </div>
+        <div class="read-container">
+          <p class="read" id="read">not read yet</p>
+          <span class="tooltiptext">Click to toogle state</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
