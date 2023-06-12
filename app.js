@@ -1,15 +1,18 @@
 let myLibrary = [{ title: "Test", author: "Someone", pages: 82, read: true }];
 
-function Book(title, author, pages, read) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.read = read;
-  this.info = function () {
+class Book {
+  constructor(title, author, pages, read) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.read = read;
+  }
+
+  info() {
     return `${title} by ${author}, ${pages} pages, ${
       read ? "already read" : "not read yet"
     }`;
-  };
+  }
 }
 
 function addBookFromForm(e) {
